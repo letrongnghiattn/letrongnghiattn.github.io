@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bài Tập Hồ Cá</title>
+
+<style>
+    /* Hồ cá */
+    .tank {
+    width: 850px;
+    height: 500px;
+    margin: 40px auto;
+    position: relative;
+    background-image: url('images/ChatGPT\ Image\ 13_22_40\ 15\ thg\ 11\,\ 2025.png'); /* ảnh bạn tạo */
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Bo cong 2 đáy */
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    
+    overflow: hidden; 
+}
+    .sand {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80%; 
+    background-image: url('images/pngtree-clean-sand-ground-png-image_6484339-removebg-preview.png'); /* hình bãi cát */
+    background-size: cover;
+    background-position: center;
+}
+    /* Trang trí */
+    .decor {
+    position: absolute;
+    bottom: 0;
+    width: 120px;
+    height: 120px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Cây */
+.tree1{
+    left: 40px; 
+    height: 250px; 
+    width: 200px; 
+    background-image: url("YOUR_TREE1.png");
+    z-index: 1; 
+}
+
+.tree2 { 
+    left: 550px; 
+    height: 300px;
+    width: 300px;
+    background-image: url("YOUR_TREE2.png");
+    z-index: 1; 
+}
+/* Đá */
+.rock {
+    left: 230px;          
+    bottom: -80px;
+    width: 400px;         
+    height: 300px;        
+    background-size: 100% 100% !important;
+
+    background-repeat: no-repeat;
+    z-index: 2;
+    position: absolute;
+}
+
+/* Cá */
+.fish {
+    width: 150px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    animation: swim 12s linear infinite;
+    z-index: 3;
+}
+
+
+.fish1 { 
+    top: 160px; 
+    animation: swim_mid 14s ease-in-out infinite;
+}
+
+.fish2 { 
+    width: 250px;
+    height: 180px;
+    top: 280px; 
+    animation: swim_low 15s ease-in-out infinite;
+}
+
+
+.fish3 { 
+    width: 100px;
+    height: 80px;
+    top: 70px;  
+    animation: swim_high 17s ease-in-out infinite;
+}
+.fish4 {
+    position: absolute;
+    width: 200px;
+    height: 150px;
+    top: 200px;  
+    right: -100px; 
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 2;
+    animation: swim_new 12s ease-in-out infinite; 
+}
+
+@keyframes swim_mid {
+    0%   { transform: translate(0, 0) scaleX(1); }
+    20%  { transform: translate(250px, -30px) scaleX(1); }
+    40%  { transform: translate(550px, 10px) scaleX(1); }
+    45%  { transform: translate(550px, 10px) scaleX(-1); }
+    70%  { transform: translate(300px, 40px) scaleX(-1); }
+    100% { transform: translate(0, 0) scaleX(-1); }
+}
+
+@keyframes swim_low {
+    0%   { transform: translate(0, 10px) scaleX(1); }
+    20%  { transform: translate(300px, 20px) scaleX(1); }
+    40%  { transform: translate(600px, -10px) scaleX(1); }
+    45%  { transform: translate(600px, -10px) scaleX(-1); }
+    75%  { transform: translate(300px, 15px) scaleX(-1); }
+    100% { transform: translate(0, 10px) scaleX(-1); }
+}
+@keyframes swim_high {
+    0%   { transform: translate(0, -20px) scaleX(1); }
+    25%  { transform: translate(260px, 40px) scaleX(1); }
+    45%  { transform: translate(550px, -25px) scaleX(1); }
+    50%  { transform: translate(550px, -25px) scaleX(-1); }
+    75%  { transform: translate(260px, 30px) scaleX(-1); }
+    100% { transform: translate(0, -20px) scaleX(-1); }
+}
+
+@keyframes swim_new {
+    0%   { transform: translate(0, 0) scaleX(1); }
+    15%  { transform: translate(-150px, -20px) scaleX(1); }
+    30%  { transform: translate(-300px, 15px) scaleX(1); }
+    45%  { transform: translate(-450px, -10px) scaleX(1); }
+    50%  { transform: translate(-450px, -10px) scaleX(-1); } 
+    65%  { transform: translate(-300px, 10px) scaleX(-1); }
+    80%  { transform: translate(-150px, -5px) scaleX(-1); }
+    100% { transform: translate(0, 0) scaleX(-1); } 
+}
+
+    .bubble {
+        position: absolute;
+        bottom: 10px;
+        width: 12px;
+        height: 12px;
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 50%;
+        animation: bubbleUp 5s infinite ease-in;
+        opacity: 0.8;
+    }
+
+    @keyframes bubbleUp {
+        0%   { transform: translateY(0) scale(1); opacity: 0.6; }
+        50%  { transform: translateY(-150px) scale(1.2); opacity: 0.9; }
+        100% { transform: translateY(-350px) scale(0.8); opacity: 0; }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="tank">
+    <div class="sand"></div>
+    <div class="light"></div>
+
+    <!-- Trang trí -->
+    <!-- Trang trí -->
+<div class="decor tree1" style="background-image: url('images/pngtree-nature-aquarium-plant-cartoon-png-image_12708256-removebg-preview.png');"></div>
+<div class="decor tree2" style="background-image: url('images/pngtree-green-aquarium-plant-cartoon-png-image_12025866-removebg-preview.png');"></div>
+<div class=" decor rock"  style="background-image: url('images/download__2_-removebg-preview.png');"></div>
+
+<!-- Cá -->
+<div class="fish fish1" style="background-image: url('images/download__1_-removebg-preview.png');"></div>
+<div class="fish fish2" style="background-image: url('images/pngtree-blue-fish-from-the-sea-png-image_3965873-removebg-preview.png');"></div>
+<div class="fish fish3" style="background-image: url('images/ChatGPT_Image_11_28_10_15_thg_11__2025-removebg-preview.png');"></div>
+<div class="fish fish4" style="background-image: url('images/download-removebg-preview.png');"></div>
+
+    <!-- Bong bóng -->
+    <div class="bubble" style="left: 120px; animation-delay: 0s;"></div>
+    <div class="bubble" style="left: 160px; animation-delay: 1s;"></div>
+    <div class="bubble" style="left: 420px; animation-delay: 2s;"></div>
+    <div class="bubble" style="left: 680px; animation-delay: 1.5s;"></div>
+    <div class="bubble" style="left: 300px; animation-delay: 0.7s;"></div>
+
+</div>
+
+</body>
+</html>
