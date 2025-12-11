@@ -1,117 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
-<title>Ho Ca Demo</title>
+<title>Du Lịch Đà Lạt</title>
 
 <style>
-    .tank {
-        width: 850px;
-        height: 420px;
-        margin: 40px auto;
-        background: linear-gradient(to bottom, #bdf1ff, #63c4ef 60%, #1f7fa8);
-        border-left: 6px solid #2f7bb3;
-        border-right: 6px solid #2f7bb3;
-        border-bottom: 12px solid #1c5f83;
-        border-bottom-left-radius: 50px;
-        border-bottom-right-radius: 50px;
-        position: relative;
-        overflow: hidden;
-        box-shadow: inset 0 0 40px rgba(0,0,0,0.25);
+    body {
+        margin: 0;
+        font-family: Arial;
+        background: #e7f7ff;
     }
 
-    .light {
-        position: absolute;
-        width: 100%;
-        height: 200px;
+    header {
+        background: white;
+        padding: 20px;
+        border-bottom: 3px solid #0099cc;
+        position: sticky;
         top: 0;
-        background: radial-gradient(circle at top, rgba(255,255,255,0.35), transparent 70%);
-        pointer-events: none;
+        z-index: 10;
     }
 
-    /* Trang trí */
-    .decor {
-        position: absolute;
-        bottom: 0;
-        width: 120px;
-        height: 120px;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: bottom;
+    nav a {
+        margin: 0 15px;
+        text-decoration: none;
+        color: #0077aa;
+        font-weight: bold;
+        cursor: pointer;
     }
 
-    /* MINH HỌA ẢNH CÂY + SỎI */
-    .tree1 { left: 40px;  background-image: url("https://i.imgur.com/dyFQ4FJ.png"); }
-    .tree2 { left: 700px; background-image: url("https://i.imgur.com/dyFQ4FJ.png"); }
-    .rock  { left: 350px; width: 180px; background-image: url("https://i.imgur.com/5cXbZ7C.png"); }
-
-    /* Cá */
-    .fish {
-        width: 110px;
-        height: 70px;
-        background-size: contain;
-        background-repeat: no-repeat;
-        position: absolute;
-        animation: swim 12s linear infinite;
+    nav a:hover {
+        color: #005577;
     }
 
-    /* ẢNH CÁ MINH HỌA */
-    .fish1 { top: 120px; background-image: url("https://i.imgur.com/8iRkWZK.png"); animation-delay: 0s; }
-    .fish2 { top: 210px; background-image: url("https://i.imgur.com/qq2VuyH.png"); animation-delay: 4s; }
-    .fish3 { top: 60px;  background-image: url("https://i.imgur.com/8iRkWZK.png"); animation-delay: 7s; }
-
-    @keyframes swim {
-        0%   { transform: translateX(-180px) translateY(0) scaleX(1); }
-        25%  { transform: translateX(250px) translateY(-20px) scaleX(1); }
-        50%  { transform: translateX(600px) translateY(20px) scaleX(1); }
-        75%  { transform: translateX(850px) translateY(0) scaleX(-1); }
-        100% { transform: translateX(-180px) translateY(0) scaleX(-1); }
+    .section {
+        display: none;
+        padding: 40px;
+        background: white;
+        margin: 40px;
+        border-radius: 10px;
     }
 
-    /* Bong bóng */
-    .bubble {
-        position: absolute;
-        bottom: 10px;
-        width: 12px;
-        height: 12px;
-        background: rgba(255,255,255,0.7);
-        border-radius: 50%;
-        animation: bubbleUp 5s infinite ease-in;
-        opacity: 0.8;
+    .active {
+        display: block;
     }
 
-    @keyframes bubbleUp {
-        0%   { transform: translateY(0)   scale(1);   opacity: 0.6; }
-        50%  { transform: translateY(-150px) scale(1.3); opacity: 0.9; }
-        100% { transform: translateY(-350px) scale(0.6); opacity: 0; }
+    .hero {
+        padding: 60px;
+        text-align: center;
+        background: linear-gradient(#0099cc, #006688);
+        color: white;
     }
+
+    h1, h2 { color: #005577; }
 </style>
-</head>
 
+<script>
+    function showSection(id) {
+        var sections = document.getElementsByClassName("section");
+        for (var i = 0; i < sections.length; i++) {
+            sections[i].classList.remove("active");
+        }
+        document.getElementById(id).classList.add("active");
+        window.scrollTo(0, 0);
+    }
+</script>
+
+</head>
 <body>
 
-<div class="tank">
+<header>
+    <h2 style="margin:0; color:#0077aa;">Tour Đà Lạt Travel</h2>
+    <nav>
+        <a onclick="showSection('home')">Trang chủ</a>
+        <a onclick="showSection('about')">Về chúng tôi</a>
+        <a onclick="showSection('tour')">Tour Đà Lạt</a>
+        <a onclick="showSection('exp')">Kinh nghiệm du lịch</a>
+        <a onclick="showSection('contact')">Liên hệ</a>
+    </nav>
+</header>
 
-    <div class="light"></div>
+<!-- TRANG CHỦ -->
+<div id="home" class="section active">
+    <div class="hero">
+        <h1>Du lịch Đà Lạt – Trọn gói & Giá tốt nhất</h1>
+        <h3>Hotline: 0842 140 733 – Giảm ngay 10% hôm nay</h3>
+    </div>
+    <p>Chào mừng bạn đến với trang du lịch Đà Lạt. Tại đây bạn có thể tìm tour trọn gói, kinh nghiệm du lịch, địa điểm ăn uống và nhiều thông tin bổ ích.</p>
+</div>
 
-    <!-- Trang trí minh họa -->
-    <div class="decor tree1"></div>
-    <div class="decor tree2"></div>
-    <div class="decor rock"></div>
+<!-- VỀ CHÚNG TÔI -->
+<div id="about" class="section">
+    <h1>Về chúng tôi</h1>
+    <p>Dịch vụ bao gồm:</p>
+    <ul>
+        <li>Miễn phí tư vấn lịch trình</li>
+        <li>Hướng dẫn viên chuyên nghiệp</li>
+        <li>Xe đưa đón tận nơi</li>
+        <li>Tour trọn gói giá hợp lý</li>
+    </ul>
+</div>
 
-    <!-- Cá minh họa -->
-    <div class="fish fish1"></div>
-    <div class="fish fish2"></div>
-    <div class="fish fish3"></div>
+<!-- TOUR ĐÀ LẠT -->
+<div id="tour" class="section">
+    <h1>Tour Đà Lạt trọn gói</h1>
 
-    <!-- Bong bóng -->
-    <div class="bubble" style="left: 120px; animation-delay: 0s;"></div>
-    <div class="bubble" style="left: 160px; animation-delay: 1s;"></div>
-    <div class="bubble" style="left: 420px; animation-delay: 2s;"></div>
-    <div class="bubble" style="left: 680px; animation-delay: 1.5s;"></div>
-    <div class="bubble" style="left: 300px; animation-delay: 0.7s;"></div>
+    <h2>Tour 1 ngày</h2>
+    <ul>
+        <li>Đồi Chè Cầu Đất</li>
+        <li>Thác Datanla – Máng trượt 2400m</li>
+        <li>Hồ Tuyền Lâm – Thiền Viện Trúc Lâm</li>
+    </ul>
 
+    <h2>Tour 2 ngày 1 đêm</h2>
+    <p>Giá: 1.450.000đ/người</p>
+    <ul>
+        <li>Quảng Trường Lâm Viên</li>
+        <li>Fresh Garden</li>
+        <li>LangBiang – leo núi hoặc xe Jeep</li>
+        <li>Chợ đêm Đà Lạt</li>
+    </ul>
+
+    <h2>Tour 3 ngày 2 đêm</h2>
+    <p>Giá: 2.350.000đ/người</p>
+    <ul>
+        <li>Đường Hầm Đất Sét</li>
+        <li>Đồi Thiên Phúc Đức – săn mây</li>
+        <li>Thung Lũng Tình Yêu</li>
+        <li>Ăn uống đặc sản tại Nhà Chung</li>
+    </ul>
+</div>
+
+<!-- KINH NGHIỆM DU LỊCH -->
+<div id="exp" class="section">
+    <h1>Kinh nghiệm du lịch Đà Lạt</h1>
+
+    <h2>1. Dịch vụ</h2>
+    <ul>
+        <li>Thuê xe máy: 120.000 – 150.000đ/ngày</li>
+        <li>Xe đưa đón sân bay: 180.000đ/người</li>
+        <li>Chụp hình chuyên nghiệp: 300.000đ/buổi</li>
+    </ul>
+
+    <h2>2. Địa điểm du lịch</h2>
+    <ul>
+        <li><b>Quảng trường Lâm Viên</b> – đường Trần Quốc Toản, bên Hồ Xuân Hương</li>
+        <li><b>Chợ Đà Lạt</b> – Nguyễn Thị Minh Khai</li>
+        <li><b>Thung Lũng Tình Yêu</b> – 7 Mai Anh Đào, P.8</li>
+        <li><b>LangBiang</b> – Lạc Dương</li>
+        <li><b>Hồ Xuân Hương</b> – trung tâm thành phố</li>
+    </ul>
+
+    <h2>3. Địa điểm ăn uống</h2>
+    <ul>
+        <li>Bánh căn Tăng Bạt Hổ – số 7 Tăng Bạt Hổ</li>
+        <li>Lẩu gà lá é Tao Ngộ – 5 Ba Tháng Tư</li>
+        <li>Ăn vặt 8768 – 244 Bùi Thị Xuân, P.2</li>
+        <li>Nhà Chung – 13 Nhà Chung, P.3</li>
+    </ul>
+</div>
+
+<!-- LIÊN HỆ -->
+<div id="contact" class="section">
+    <h1>Liên hệ</h1>
+    <p>Hotline: <b>0842 140 733</b></p>
+    <p>Email: dalattravel@gmail.com</p>
+    <p>Địa chỉ văn phòng: 15 Đoàn Thị Điểm, Đà Lạt</p>
 </div>
 
 </body>
 </html>
+

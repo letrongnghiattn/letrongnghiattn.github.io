@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Travel Website - Đà Lạt</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #eef6fa;
+        color: #00334e;
+    }
+    header {
+        background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80') center/cover;
+        height: 320px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 42px;
+        font-weight: bold;
+        text-shadow: 0 4px 12px rgba(0,0,0,0.7);
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        background: white;
+        padding: 15px 0;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+    }
+    nav a {
+        font-size: 18px;
+        text-decoration: none;
+        color: #006699;
+        font-weight: bold;
+        padding: 8px 16px;
+        border-radius: 6px;
+        transition: 0.2s;
+        cursor: pointer;
+    }
+    nav a:hover {
+        background: #e2f2ff;
+    }
+    .page {
+        display: none;
+        padding: 30px 50px;
+        max-width: 1100px;
+        margin: auto;
+    }
+    .active {
+        display: block;
+    }
+    h2 {
+        color: #00557a;
+        font-size: 28px;
+        margin-top: 10px;
+        border-left: 6px solid #0099cc;
+        padding-left: 14px;
+    }
+    .section-block {
+        background: white;
+        margin: 18px 0;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .item-title {
+        font-size: 22px;
+        font-weight: bold;
+        color: #0077aa;
+        margin-bottom: 6px;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+    }
+    .img-box {
+        width: 100%;
+        border-radius: 10px;
+        height: 180px;
+        object-fit: cover;
+        margin-bottom: 12px;
+    }
+</style>
+</head>
+<body>
+
+<header>Khám Phá Đà Lạt</header>
+
+<nav>
+    <a onclick="showPage('home')">Trang Chủ</a>
+    <a onclick="showPage('tour')">Tour Du Lịch</a>
+    <a onclick="showPage('place')">Địa Điểm Nổi Bật</a>
+    <a onclick="showPage('food')">Ẩm Thực</a>
+    <a onclick="showPage('experience')">Kinh Nghiệm</a>
+    <a onclick="showPage('contact')">Liên Hệ</a>
+</nav>
+
+<!-- TRANG CHỦ -->
+<div id="home" class="page active">
+    <h2>Giới thiệu Đà Lạt</h2>
+    <div class="section-block">
+        Đà Lạt, thuộc tỉnh Lâm Đồng, là một trong những điểm đến du lịch nổi bật nhất tại Việt Nam. Với khí hậu ôn hòa quanh năm, nhiệt độ trung bình chỉ khoảng 18–21°C, thành phố được mệnh danh là “Thành phố ngàn hoa”, “Tiểu Paris giữa lòng Tây Nguyên” và “Xứ sở sương mù”.<br>
+
+        Đà Lạt gây ấn tượng mạnh với du khách nhờ vẻ đẹp lãng mạn, thanh bình và đầy chất thơ. Thành phố sở hữu hệ sinh thái rừng thông bạt ngàn, những hồ nước phẳng lặng, các thung lũng xanh mướt, cùng nhiều công trình kiến trúc cổ mang phong cách Pháp. Không chỉ nổi tiếng với cảnh quan thiên nhiên, Đà Lạt còn là thiên đường ẩm thực với những món đặc sản như bánh căn, bánh ướt lòng gà, lẩu gà lá é, kem bơ và dâu tươi.<br>
+
+        Trong nhiều năm qua, Đà Lạt luôn là sự lựa chọn hàng đầu cho những chuyến nghỉ dưỡng, tham quan, chụp ảnh, khám phá văn hóa và trải nghiệm khí hậu se lạnh đặc trưng. Dù bạn tìm kiếm sự yên bình, vẻ đẹp thiên nhiên hay những hoạt động giải trí hiện đại, Đà Lạt đều có thể đáp ứng trọn vẹn.
+    </div>
+</div>
+
+<!-- TOUR -->
+<div id="tour" class="page">
+    <h2>Tour Du Lịch Đà Lạt</h2>
+
+    <div class="grid">
+        <div class="section-block">
+            <img src="images/ho-xuan-huong-da-lat-1.jpg" class="img-box">
+            <div class="item-title">Tour 2 ngày 1 đêm</div>
+            - Giá: 1.200.000 VNĐ/người<br>
+            - Lịch trình: Langbiang – Hồ Xuân Hương – Fresh Garden – Đồi Chè Cầu Đất.
+        </div>
+
+        <div class="section-block">
+            <img src="images/kinh-nghiem-di-thien-vien-truc-lam-sieu-hot-ban-khong-nen-bo-lo-1-1635831045.jpeg" class="img-box">
+            <div class="item-title">Tour 3 ngày 2 đêm</div>
+            - Giá: 1.900.000 VNĐ/người<br>
+            - Lịch trình: Que Garden – Puppy Farm – Chợ Đêm – Thiền Viện Trúc Lâm.
+        </div>
+
+        <div class="section-block">
+            <img src="images/kom-bi-land .jpg" class="img-box">
+            <div class="item-title">Tour Check-in Sống Ảo</div>
+            - Giá: 950.000 VNĐ/người<br>
+            - Địa điểm: Kombi Land – Hồ Tuyền Lâm – Cây Thông Cô Đơn.
+        </div>
+    </div>
+</div>
+
+<!-- ĐỊA ĐIỂM DU LỊCH -->
+<div id="place" class="page">
+    <h2>Địa Điểm Du Lịch Nổi Bật</h2>
+
+    <div class="grid">
+        <div class="section-block">
+            <img class="img-box" src="images/canh-dep-da-lat-2-1722331968.jpg" />
+            <div class="item-title">Hồ Xuân Hương</div>
+            - Địa chỉ: Trung tâm TP. Đà Lạt<br>
+            - Hoạt động: Đạp vịt, ngắm cảnh, tản bộ.
+        </div>
+
+        <div class="section-block">
+            <img class="img-box" src="images/3_tham_quan_mien_phi_mo_cua_suot_ngay_dem_a748069559.jpg" />
+            <div class="item-title">Quảng Trường Lâm Viên</div>
+            -Địa chỉ: Đường Hồ Xuân Hương, Phường Xuân Hương<br>
+            - Biểu tượng: Nụ hoa Atiso, hoa Dã Quỳ.
+        </div>
+
+        <div class="section-block">
+            <img class="img-box" src="images/Đỉnh_Langbiang.jpg" />
+            <div class="item-title">Langbiang</div>
+            - Địa chỉ: 305 Langbiang, Thị trấn Lạc Dương, Huyện Lạc Dương, Tỉnh Lâm Đồng.<br>
+            - Hoạt động: Leo núi, ngắm toàn cảnh Đà Lạt.
+        </div>
+    </div>
+</div>
+
+<!-- ẨM THỰC -->
+<div id="food" class="page">
+    <h2>Ẩm Thực Đà Lạt</h2>
+
+    <div class="grid">
+        <div class="section-block">
+            <img class="img-box" src="images/lau_nuong_da_lat_17.jpg" />
+            <div class="item-title">Lẩu nướng</div>
+            Nậm Nướng Đà Lạt: Nổi tiếng với đồ nướng và lẩu giá bình dân, chỉ từ 25K-80K/món, rất hợp để tụ tập bạn bè.<br>
+            -Địa chỉ: 07 Đ. Hoàng Diệu, Phường 5, Đà Lạt.<br>
+            -Giờ mở cửa: 4:00 PM - 11:00 PM.<br>
+            -Mức giá: 100.000 - 300.000 VNĐ.
+        </div>
+
+        <div class="section-block">
+            <img class="img-box" src="images/lau-ga-la-e-da-lat-1.jpeg" />
+            <div class="item-title">Lẩu Gà Lá É </div>
+            Lẩu Gà Lá É Tao Ngộ
+            -Địa chỉ: 05 Đường 3/4 (hoặc 78 Bùi Thị Xuân), Phường 2, Đà Lạt.
+            -Giờ mở cửa: Cả ngày (nên kiểm tra lại trước khi đến).
+            -Mức giá: Khoảng 200.000 - 300.000 VNĐ/nồi.
+        </div>
+
+        <div class="section-block">
+            <img class="img-box" src="images/suadaunanh.jpg" />
+            <div class="item-title">Sữa Đậu Nành Chợ Đêm</div>
+            Quán Sữa Chợ Đêm Đà Lạt: Nhiều hàng quán vỉa hè bán sữa đậu nành nóng, bánh và các món ăn vặt khác trong khu vực chợ đêm.<br>
+            -Địa chỉ: Khu vực Chợ đêm Đà Lạt, Đường Nguyễn Thị Minh Khai.<br>
+            -Giờ mở cửa: Thường từ 6:00 PM - 12:00 AM<br>
+            -Mức giá: Khoảng 10.000 VNĐ/ly 
+        </div>
+    </div>
+</div>
+
+<!-- KINH NGHIỆM -->
+<div id="experience" class="page">
+    <h2>Kinh Nghiệm Du Lịch</h2>
+
+    <div class="section-block">
+        <div class="item-title">Thuê Xe Máy</div>
+        - Giá: 120.000 – 150.000 VNĐ/ngày.<br>
+        - Địa chỉ gợi ý: 1 Lê Thị Hồng Gấm.
+    </div>
+
+    <div class="section-block">
+        <div class="item-title">Đặt Khách Sạn</div>
+        - Nên đặt trước 1 tuần vào mùa cao điểm.
+    </div>
+
+    <div class="section-block">
+        <div class="item-title">Thời Gian Du Lịch Lý Tưởng</div>
+        - Tháng 11 đến tháng 3: Mùa hoa đẹp nhất.
+    </div>
+</div>
+
+<!-- LIÊN HỆ -->
+<div id="contact" class="page">
+    <h2>Liên Hệ</h2>
+    <div class="section-block">
+        Hotline: 0901 234 567<br>
+        Email: info@dalattravel.com<br>
+        Địa chỉ văn phòng: 12 Đường 3/2, Đà Lạt.
+    </div>
+</div>
+
+<script>
+function showPage(pageId) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(pageId).classList.add('active');
+}
+</script>
+
+</body>
+</html>
